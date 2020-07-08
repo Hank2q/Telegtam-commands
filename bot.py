@@ -144,12 +144,17 @@ def command(update, context):
         print(f'[COMMAND ERROR]: {cmd}:\n', error.decode())
     else:
         print(f'[COMMAND RAN]: {cmd}')
-        if not result:
+        if not result or result == b'\x0c':
             context.bot.send_message(
                 chat_id=update.effective_chat.id, text='Command ran successfuly\nNo output')
         else:
-            context.bot.send_message(
-                chat_id=update.effective_chat.id, text=result.decode())
+            if len(result) <= 4000:
+                context.bot.send_message(
+                    chat_id=update.effective_chat.id, text=result.decode())
+            else:
+                for chunk in result[0:len(result), 4000]:
+                    context.bot.send_message(
+                        chat_id=update.effective_chat.id, text=chunk.decode())
 
 
 command_filter = CommandFilter()
