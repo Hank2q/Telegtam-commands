@@ -152,9 +152,9 @@ def command(update, context):
                 context.bot.send_message(
                     chat_id=update.effective_chat.id, text=result.decode())
             else:
-                for chunk in result[0:len(result), 4000]:
+                for chunk in range(0, len(result), 4000):
                     context.bot.send_message(
-                        chat_id=update.effective_chat.id, text=chunk.decode())
+                        chat_id=update.effective_chat.id, text=result[chunk:chunk + 4000].decode())
 
 
 command_filter = CommandFilter()
