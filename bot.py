@@ -34,8 +34,8 @@ def start(update, context):
             chat_id=update.effective_chat.id, text="This bot is private")
         return
     # context.bot.send_message(
-        # chat_id=update.effective_chat.id, text="Welcom Hank!")
-    update.message.reply_text('Welcom Hank!')
+        # chat_id=update.effective_chat.id, text="Welcom!")
+    update.message.reply_text('Welcom!')
 
 
 dispatcher.add_handler(CommandHandler('start', start))
@@ -62,7 +62,7 @@ def screenshot(update, context):
     context.bot.send_message(
         chat_id=update.effective_chat.id, text='screenshot taken')
     context.bot.send_photo(
-        chat_id=update.effective_chat.id, photo=open(f'C:/Users/HASSANIN/Desktop/PythonProj/mobile-com/screenshots/{name}', 'rb'))
+        chat_id=update.effective_chat.id, photo=open(f'screenshots/{name}', 'rb'))
 
 
 dispatcher.add_handler(CommandHandler('screenshot', screenshot))
