@@ -41,7 +41,7 @@ def start(update, context):
         logger.warning(
             f'Unkown user connected to bot:\nid: {update.effective_user.id}\nname: {update.effective_user.name}')
         return
-    update.message.reply_text('Welcom Hank!')
+    update.message.reply_text('Welcom')
     logger.info('[CONNECTION ESTABLISHED]')
 
 
