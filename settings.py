@@ -16,10 +16,10 @@ def log():
     return logger
 
 
-token = '1375525321:AAGMBUccTtTZ1MQ6TojACaCpLFBadzxyUec'
-id = 1279697548
-cloud = r'"C:\Users\HASSANIN\OneDrive\BotUpload"'
-screenshots_dir = 'C:/Users/HASSANIN/Desktop/PythonProj/mobile-com/screenshots/'
+token = 'Telegram bot token'
+id = 'id premitted to interact with bot'
+cloud = 'local file to cloud application'
+screenshots_dir = 'path/to/project/directory/mobile-com/screenshots/'
 short_help = '''\
 Acceptable commands are:
 
